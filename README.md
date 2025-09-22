@@ -1,5 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Generation SaaS Platform
 
+A full-featured SaaS platform for **Image, Music, Video, and Code Generation**, built with [Next.js](https://nextjs.org/) and modern AI tooling.  
+
+![Platform Preview](https://i.postimg.cc/L68WXvYJ/Screenshot-2025-09-22-101352.png)
+
+---
+
+## ✨ Features
+
+- 🖼️ **Image Generation** – Create AI-powered visuals in seconds  
+- 🎶 **Music Generation** – Generate unique audio tracks  
+- 📹 **Video Generation** – Transform prompts into videos  
+- 💻 **Code Generation** – Instantly produce code snippets  
+- 🔐 **Authentication & Billing** – Secure login with subscription plans  
+- 📊 **Dashboard & Analytics** – Track your usage and generation history  
+
+---
 ## Getting Started
 
 First, run the development server:
@@ -19,7 +35,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ⚙️ Configuration
 
+1. Create a `.env.local` file in the project root
+2. Add your API keys (e.g. OpenAI, Stability, Replicate, etc.):
+
+```env
+OPENAI_API_KEY=your_key_here
+REPLICATE_API_KEY=your_key_here
+```
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
