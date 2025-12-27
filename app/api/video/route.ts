@@ -15,7 +15,7 @@ export async function POST(
   try {
     const { userId } = auth();
     const body = await req.json();
-    const { prompt  } = body;
+    const { prompt } = body;
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
@@ -33,27 +33,28 @@ export async function POST(
     }
 
     const response = await replicate.run(
-      "anotherjesse/zeroscope-v2-xl:9f747673945c62801b13b84701c783929c0ee784e4748ec062204894dda1a351",
+      // "anotherjesse/zeroscope-v2-xl:9f747673945c62801b13b84701c783929c0ee784e4748ec062204894dda1a351",
+      "google/veo-3",
       {
         input: {
-          fps: 24,
-          model: "xl",
-          width: 1024,
-          height: 576,
+          aspect_ratio: "16:9",
+          // fps: 24,
+          // width: 1024,
+          // height: 576,
           prompt: prompt,
-          batch_size: 1,
-          num_frames: 24,
-          init_weight: 0.5,
-          guidance_scale: 17.5,
-          remove_watermark: false,
-          num_inference_steps: 50
+          // batch_size: 1,
+          // num_frames: 24,
+          // init_weight: 0.5,
+          // guidance_scale: 17.5,
+          // remove_watermark: false,
+          // num_inference_steps: 50
         }
       }
     );
 
-    if(!isPro){
+    if (!isPro) {
       await incrementApiLimit();
-     }
+    }
     return NextResponse.json(response);
   } catch (error) {
     console.log('[VIDEO_ERROR]', error);

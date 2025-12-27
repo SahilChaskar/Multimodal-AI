@@ -6,6 +6,7 @@ import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
 
 const settingsUrl = absoluteUrl("/settings");
+console.log("Settings URL:", settingsUrl);
 
 export async function GET() {
   try {
