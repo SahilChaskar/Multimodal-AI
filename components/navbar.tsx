@@ -8,14 +8,17 @@ const Navbar = async () => {
   const apiLimitCount = await getApiLimitCount();
   const isPro = await checkSubscription();
 
-  return ( 
+  return (
     <div className="flex items-center p-4">
       <MobileSidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       <div className="flex w-full justify-end">
-        <UserButton afterSignOutUrl="/" />
+        <UserButton
+          afterSignOutUrl={process.env.NEXT_PUBLIC_APP_URL || "/"}
+          afterMultiSessionSingleSignOutUrl={process.env.NEXT_PUBLIC_APP_URL || "/"}
+        />
       </div>
     </div>
-   );
+  );
 }
- 
+
 export default Navbar;
